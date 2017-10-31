@@ -94,18 +94,26 @@ def get(search_term):
 		return CACHE_DICTION[search_term]
 
 
-search_resu = get('apple')
-print(search_resu)
+
 
 
 ## 3. Using a loop, invoke your function, save the return value in a variable, and explore the 
 ##		data you got back!
+for i in range(3):
+	search = input("enter: ")
+	tweet_result = get(search)
+	
+
+
 
 
 ## 4. With what you learn from the data -- e.g. how exactly to find the 
 ##		text of each tweet in the big nested structure -- write code to print out 
 ## 		content from 5 tweets, as shown in the linked example.
-
+	for r in tweet_result["statuses"][:5]:
+		print("TEXT:", r["text"])
+		print("CREATED AT:", r["created_at"])
+		print("\n")
 
 
 
